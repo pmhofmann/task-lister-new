@@ -5,11 +5,18 @@ const tasks = document.querySelector('#tasks')
 function addTask(task){
   const li = document.createElement("li")
 
-  li.innerHTML = task 
+  li.innerHTML = 
+  `${task} <button class='delete-btn'>X</button>`
+  
+
+  const deleteBtn = li.querySelector(".delete-btn")
+  // debugger
+  deleteBtn.addEventListener("click", function(){
+    li.remove()
+  })
+
 
   tasks.appendChild(li)
-
-
 }
 
 
